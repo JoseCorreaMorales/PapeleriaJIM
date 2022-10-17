@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';/* formulario reactivo */
 import { ApiService } from 'src/app/services/api.service';
-
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dialog',
@@ -9,54 +9,58 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent implements OnInit {
+  durationInSeconds = 5;
+  itemList = ['Chico', 'Mediano', 'Grande']
+  
 
-  itemList = ['1st op', '2nd op', '3th op']
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
 
   addForm !: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private api: ApiService,
+    private notify: MatSnackBar) { }
 
   ngOnInit(): void {
     /* formulario reactivo */
     this.addForm = this.formBuilder.group({
-      name: ['', Validators.required],/*  */
-      category: ['', Validators.required],/*  */
-      radioType: ['', Validators.required],/*  */
-      comentario: ['', Validators.required],/*  */
-      number: ['', Validators.required],/*  */
-      date: ['', Validators.required]/*  */
-
+      name: ['', Validators.required],
+      category: ['', Validators.required],
+      date: ['', Validators.required],
+      tamano: ['', Validators.required],
+      precio: ['', Validators.required],
+      commentary: ['', Validators.required],      
     })
   }
- /* console.log(this.addForm.value); */
-  /* addItem() {
-   
-    if (this.addForm.valid) {
-      this.api.postItem(this.addForm.value);
-      .subscribe({
-        next: (resposnse) => {
-          alert("");
+
+
+  
+ 
+
+  addProduct(){
+    if(this.addForm.valid){
+      this.api.postItem(this.addForm.value).subscribe({
+        next:(res)=>{
+          //alert("Producto añadido")  
+         this.openNotification('Producto añadido', 'Cerrar')      
+        },
+        error:()=>{
+          this.openNotification('Error..', 'Cerrar')       
         }
       })
-
-    }
-  } */
-
-  addItem(){
-    console.log(this.addForm.value);
-    if(this.addForm.valid){
-      this.api.postItem(this.addForm).subscribe(
-       response =>{
-          alert("Producto agregado");
-        },
-        e =>{
-          alert("error");
-        }
-        
-      );
     }
   }
+
+
+  openNotification(message:string, action:string) {
+    this.notify.open(message, action,  {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: this.durationInSeconds * 1000
+    });
+    };  
 
 
 }
