@@ -1,0 +1,127 @@
+@import '@angular/material/theming';
+ @include mat-core();
+
+/* https://colorhunt.co/palette/425f57749f82a8e890cfff8d
+http://mcg.mbitson.com/# */
+ // color range
+ $my-primary-color:(
+    50 : #e8eceb,
+    100 : #c6cfcd,
+    200 : #a1afab,
+    300 : #7b8f89,
+    400 : #5e7770,
+    500 : #425f57,
+    600 : #3c574f,
+    700 : #334d46,
+    800 : #2b433c,
+    900 : #1d322c,
+    A100 : #79ffd2,
+    A200 : #46ffc1,
+    A400 : #13ffb0,
+    A700 : #00f8a5,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+
+ );
+
+ $my-accent-color:(
+    50 : #eef3f0,
+    100 : #d5e2da,
+    200 : #bacfc1,
+    300 : #9ebca8,
+    400 : #89ad95,
+    500 : #749f82,
+    600 : #6c977a,
+    700 : #618d6f,
+    800 : #578365,
+    900 : #447252,
+    A100 : #cdffdc,
+    A200 : #9affb8,
+    A400 : #67ff94,
+    A700 : #4dff82,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+ );
+
+ $my-warn-color: (
+    50 : #f5fcf2,
+    100 : #e5f8de,
+    200 : #d4f4c8,
+    300 : #c2efb1,
+    400 : #b5eba1,
+    500 : #a8e890,
+    600 : #a0e588,
+    700 : #97e27d,
+    800 : #8dde73,
+    900 : #7dd861,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #e6ffdf,
+    A700 : #d2ffc5,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+
+ );
+
+ //palette
+ $my-palette-primary: mat-palette($my-primary-color);
+ $my-palette-accent: mat-palette($my-accent-color);
+ $my-palette-warn: mat-palette($my-warn-color);
+
+
+ //my own theme
+
+$my-theme: mat-light-theme(
+    $my-palette-primary,
+     $my-palette-accent,
+      $my-palette-warn
+      );
+
+//apply changes
+@include angular-material-theme($my-theme);
+
+
+ 
+
