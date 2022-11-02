@@ -29,8 +29,8 @@ export class DialogComponent implements OnInit {
       name: ['', Validators.required],
       category: ['', Validators.required],
       date: ['', Validators.required],
-      tamano: ['', Validators.required],
-      precio: ['', Validators.required],
+      size: ['', Validators.required],
+      price: ['', Validators.required],
       commentary: ['', Validators.required],      
     })
   }

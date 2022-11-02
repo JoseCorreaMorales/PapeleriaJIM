@@ -1,0 +1,62 @@
+<div class="container">
+    <button mat-raised-button class="add-button" color="accent" (click)="openDialog()">Agregar</button>
+    <div class="">
+        <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                </ng-container>
+
+                <!-- category Column -->
+                <ng-container matColumnDef="category">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+                    <td mat-cell *matCellDef="let row"> {{row.category}}% </td>
+                </ng-container>
+
+                <!-- date Column -->
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+                    <td mat-cell *matCellDef="let row"> {{row.date | date}} </td>
+                </ng-container>
+
+                <!-- size Column -->
+                <ng-container matColumnDef="size">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tamaño </th>
+                    <td mat-cell *matCellDef="let row"> {{row.size}} </td>
+                </ng-container>
+
+                <!-- price column -->
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio $ </th>
+                    <td mat-cell *matCellDef="let row"> {{row.price | currency}} </td>
+                </ng-container>
+
+                <!-- commentary column -->
+                <ng-container matColumnDef="commentary">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Comentarios..</th>
+                    <td mat-cell *matCellDef="let row"> {{row.commentary}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+
+    </div>
+</div>
+

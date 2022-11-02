@@ -3,27 +3,31 @@
     {
       "name": "hgn",
       "category": "two",
-      "radioType": "1st op",
-      "comentario": "gg",
-      "number": 66,
       "date": "2022-10-10T05:00:00.000Z",
+      "size": "1st op",
+      "price": 66,
+      "comentario": "gg",
+      
+      
       "id": 1
-    },
+    }, 
     {
       "name": "sdfsd",
       "category": "two",
-      "radioType": "3th op",
-      "comentario": "sfsdvs",
-      "number": 22,
       "date": "2022-10-18T05:00:00.000Z",
+      "size": "3th op",
+      "price": 22,
+      "comentario": "sfsdvs",
+      
+      
       "id": 2
     },
     {
       "name": "Arroz",
       "category": "one",
       "date": "2022-10-16T05:00:00.000Z",
-      "tamano": "Chico",
-      "precio": 18,
+      "size": "Chico",
+      "price": 18,
       "commentary": "yummy!...",
       "id": 3
     },
@@ -31,46 +35,10 @@
       "name": "a",
       "category": "First option",
       "date": "2022-10-17T05:00:00.000Z",
-      "tamano": "Mediano",
-      "precio": 96,
+      "size": "Mediano",
+      "price": 96,
       "commentary": "aa",
       "id": 4
-    },
-    {
-      "name": "xdddd",
-      "category": "Second option",
-      "date": "2022-10-12T05:00:00.000Z",
-      "tamano": "Mediano",
-      "precio": 123,
-      "commentary": "1234",
-      "id": 5
-    },
-    {
-      "name": "xdfsdf",
-      "category": "Second option",
-      "date": "2022-10-12T05:00:00.000Z",
-      "tamano": "Grande",
-      "precio": 331,
-      "commentary": "sdfsdf",
-      "id": 6
-    },
-    {
-      "name": "asd",
-      "category": "Thrid option",
-      "date": "2022-10-12T05:00:00.000Z",
-      "tamano": "Chico",
-      "precio": 333,
-      "commentary": "asdas",
-      "id": 7
-    },
-    {
-      "name": "aaa",
-      "category": "Second option",
-      "date": "2022-10-31T06:00:00.000Z",
-      "size": "Chico",
-      "price": 1,
-      "commentary": "aaa",
-      "id": 8
     }
   ],
   "comments": [

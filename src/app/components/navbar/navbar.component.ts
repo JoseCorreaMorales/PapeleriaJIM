@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,19 +10,14 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  
+
+  constructor() { }
 
   ngOnInit(): void {
+    
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '30%'
-    } );
-     
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  
 
 }

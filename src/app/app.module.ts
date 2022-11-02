@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { TableComponent } from './components/table/table.component';
 
 
 
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     NavbarComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

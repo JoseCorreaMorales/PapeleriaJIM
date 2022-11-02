@@ -14,8 +14,9 @@ import {MatNativeDateModule} from '@angular/material/core'
 import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; /* mesajes de alerta */
-
-
+import {MatTableModule} from '@angular/material/table'; 
+import {MatPaginatorModule} from '@angular/material/paginator'; 
+import {MatSortModule} from '@angular/material/sort'; 
 
 @NgModule({
   declarations: [],
@@ -33,7 +34,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'; /* mesajes de ale
     MatRadioModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
+   
    
 
   ], 
@@ -50,7 +55,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'; /* mesajes de ale
     MatRadioModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   
   ]
 })
