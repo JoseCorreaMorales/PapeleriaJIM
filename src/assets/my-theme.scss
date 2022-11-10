@@ -3,27 +3,49 @@
 
 /* https://colorhunt.co/palette/425f57749f82a8e890cfff8d
 http://mcg.mbitson.com/# */
+
+
+
+/* optinoal color palettes 
+https://colorhunt.co/palette/541690ff4949ff8d29ffcd38
+https://colorhunt.co/palette/ffe9a0367e18f57328cc3636
+https://colorhunt.co/palette/a7d2cbf2d388c98474874c62
+https://colorhunt.co/palette/383838066163cdbe78f2f2f2
+
+https://colorhunt.co/palette/541690ff4949ff8d29ffcd38
+https://colorhunt.co/palette/4c3a51774360b25068e7ab79
+https://colorhunt.co/palette/06283d1363df47b5ffdff6ff
+https://colorhunt.co/palette/293462f24c4cec9b3bf7d716
+*/
+
+/* Color palette generator::after
+
+    http://mcg.mbitson.com/#!?mcgpalette0=%23541690
+
+ */
+
+
  // color range
  $my-primary-color:(
-    50 : #e8eceb,
-    100 : #c6cfcd,
-    200 : #a1afab,
-    300 : #7b8f89,
-    400 : #5e7770,
-    500 : #425f57,
-    600 : #3c574f,
-    700 : #334d46,
-    800 : #2b433c,
-    900 : #1d322c,
-    A100 : #79ffd2,
-    A200 : #46ffc1,
-    A400 : #13ffb0,
-    A700 : #00f8a5,
+    50 : #eae3f2,
+    100 : #ccb9de,
+    200 : #aa8bc8,
+    300 : #875cb1,
+    400 : #6e39a1,
+    500 : #541690,
+    600 : #4d1388,
+    700 : #43107d,
+    800 : #3a0c73,
+    900 : #290661,
+    A100 : #b592ff,
+    A200 : #935fff,
+    A400 : #702cff,
+    A700 : #5f13ff,
     contrast: (
         50 : #000000,
         100 : #000000,
         200 : #000000,
-        300 : #000000,
+        300 : #ffffff,
         400 : #ffffff,
         500 : #ffffff,
         600 : #ffffff,
@@ -32,35 +54,35 @@ http://mcg.mbitson.com/# */
         900 : #ffffff,
         A100 : #000000,
         A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
     )
 
  );
 
  $my-accent-color:(
-    50 : #eef3f0,
-    100 : #d5e2da,
-    200 : #bacfc1,
-    300 : #9ebca8,
-    400 : #89ad95,
-    500 : #749f82,
-    600 : #6c977a,
-    700 : #618d6f,
-    800 : #578365,
-    900 : #447252,
-    A100 : #cdffdc,
-    A200 : #9affb8,
-    A400 : #67ff94,
-    A700 : #4dff82,
+    50 : #ffe9e9,
+    100 : #ffc8c8,
+    200 : #ffa4a4,
+    300 : #ff8080,
+    400 : #ff6464,
+    500 : #ff4949,
+    600 : #ff4242,
+    700 : #ff3939,
+    800 : #ff3131,
+    900 : #ff2121,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffd0d0,
+    A700 : #ffb7b7,
     contrast: (
         50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #000000,
         400 : #000000,
-        500 : #000000,
-        600 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
         700 : #ffffff,
         800 : #ffffff,
         900 : #ffffff,
@@ -72,20 +94,20 @@ http://mcg.mbitson.com/# */
  );
 
  $my-warn-color: (
-    50 : #f5fcf2,
-    100 : #e5f8de,
-    200 : #d4f4c8,
-    300 : #c2efb1,
-    400 : #b5eba1,
-    500 : #a8e890,
-    600 : #a0e588,
-    700 : #97e27d,
-    800 : #8dde73,
-    900 : #7dd861,
+    50 : #fff1e5,
+    100 : #ffddbf,
+    200 : #ffc694,
+    300 : #ffaf69,
+    400 : #ff9e49,
+    500 : #ff8d29,
+    600 : #ff8524,
+    700 : #ff7a1f,
+    800 : #ff7019,
+    900 : #ff5d0f,
     A100 : #ffffff,
-    A200 : #ffffff,
-    A400 : #e6ffdf,
-    A700 : #d2ffc5,
+    A200 : #fffaf7,
+    A400 : #ffd5c4,
+    A700 : #ffc3ab,
     contrast: (
         50 : #000000,
         100 : #000000,

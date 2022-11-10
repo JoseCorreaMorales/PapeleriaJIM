@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';/* formulario reactivo */
 import { ApiService } from 'src/app/services/api.service';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
-
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TableComponent } from '../table/table.component';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -11,7 +12,7 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
 export class DialogComponent implements OnInit {
   durationInSeconds = 5;
   itemList = ['Chico', 'Mediano', 'Grande']
-  
+  actionBtn : String = "Guardar"
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
@@ -21,7 +22,9 @@ export class DialogComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder, private api: ApiService,
-    private notify: MatSnackBar) { }
+    private notify: MatSnackBar, private dialogRef : MatDialogRef<DialogComponent>,
+     @Inject(MAT_DIALOG_DATA) public editData : any
+     ) { }
 
   ngOnInit(): void {
     /* formulario reactivo */
@@ -33,6 +36,17 @@ export class DialogComponent implements OnInit {
       price: ['', Validators.required],
       commentary: ['', Validators.required],      
     })
+    console.log(this.editData) //debugging
+    if (this.editData) {
+      this.actionBtn = "Actualizar";
+      this.addForm.controls['name'].setValue(this.editData.name);
+      this.addForm.controls['category'].setValue(this.editData.category);
+      this.addForm.controls['date'].setValue(this.editData.date);
+      this.addForm.controls['size'].setValue(this.editData.size);
+      this.addForm.controls['price'].setValue(this.editData.price);
+      this.addForm.controls['commentary'].setValue(this.editData.commentary);
+    }
+
   }
 
 
@@ -40,17 +54,37 @@ export class DialogComponent implements OnInit {
  
 
   addProduct(){
-    if(this.addForm.valid){
-      this.api.postItem(this.addForm.value).subscribe({
-        next:(res)=>{
-          //alert("Producto añadido")  
-         this.openNotification('Producto añadido', 'Cerrar')      
-        },
-        error:()=>{
-          this.openNotification('Error..', 'Cerrar')       
-        }
-      })
+    if (!this.editData) {
+      if(this.addForm.valid){
+        this.api.postItem(this.addForm.value).subscribe({
+          next:(res)=>{
+            //alert("Producto añadido")  
+           this.openNotification('Producto añadido', 'Cerrar')  
+           this.addForm.reset();
+           this.dialogRef.close('guardar');
+          },
+          error:()=>{
+            this.openNotification('Error..', 'Cerrar')       
+          }
+        })
+      }
+    }else{
+      this.update();
     }
+  }
+
+  update(){
+    this.api.putItem(this.addForm.value, this.editData.id).subscribe({
+      next:(res) =>{
+        this.openNotification('actualizado correctamente yeyy', 'cerrar')
+        this.addForm.reset();
+        this.dialogRef.close('actualizar');
+      },
+      error:(err) =>{
+        this.openNotification('Opps algo salio mal..', 'cerrar')
+        console.log(this.editData.id);
+      }
+    })
   }
 
 

@@ -5,15 +5,23 @@
       <!-- <img [src]="logo" alt="" width="50%" height="80%"> -->
       <span class="material-icons login-icon">face</span>
       <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+      <!-- username -->
       <mat-form-field class="ancho" appearance="fill">
-        <mat-label>Usuario</mat-label>
+        <mat-label>Usuario</mat-label>        
         <input matInput formControlName="usuario">
+        <mat-icon matSuffix>person</mat-icon>          
       </mat-form-field>
+
+        <!-- password -->
       <mat-form-field class="ancho" appearance="fill">
         <mat-label>Contraseña</mat-label>
         <input matInput type="password" formControlName="password">
+        <mat-icon matSuffix>password</mat-icon>
       </mat-form-field>
       <br>
+
+
       <button type="submit" class="ancho" mat-raised-button mat-button color="primary"
         [disabled]="formLogin.invalid">Ingresar</button>
       <!-- (click)="ingresar()" -->
