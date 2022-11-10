@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
 ## Para que instalen el proyecto
-git clone (link)                                                                                                                                           npm install
+1.-  git clone (link)  2.-npm install
 
 ## Servidor json
 npm install -g js json-server //instalar                                                                                                                         
