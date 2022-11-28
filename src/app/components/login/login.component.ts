@@ -9,12 +9,13 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class LoginComponent implements OnInit {
 
-  formLogin : FormGroup;
-  user:string ="admin";
-  pass:string ="123";
+  formLogin: FormGroup;
+  username: string = "";
+  password: string = "";
 
 
-  constructor(private  router: Router, private form: FormBuilder, private api: ApiService) { 
+
+  constructor(private router: Router, private form: FormBuilder, private api: ApiService) {
     this.formLogin = this.form.group({
       usuario: ['', Validators.required],
       password: ['', Validators.required],
@@ -24,8 +25,48 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ingresar(){
-   
+
+  /*  ingresar() {
+     this.api.login(this.login).subscribe {
+       data => {
+         if (data['resultado']) == 'OK' {
+           alert(datos['mensaje'])
+         }else {
+           alert(datos['mensaje'])
+         }
+       }
+     };
+ 
+   } */
+
+  ingresar() {
+    this.api.login(this.username, this.password).subscribe(
+      response => {
+        this.api.setUser(response.user);
+        localStorage.setItem('token', response.token)
+        this.router.navigate(['/table']);
+        alert("Bienvenido " + this.username);        
+    }, 
+    error => {
+       
+      alert("Error credenciales incorrectas " + error)
+    }
+
+    );
+
   }
 
+
+
+
+
+
+
+
+
+
+
+
 }
+
+

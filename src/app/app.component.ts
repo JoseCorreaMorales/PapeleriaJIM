@@ -8,7 +8,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {  
-  title = 'proyecto1';
+  title = 'Papelería JIM';
 
   constructor(private dialog : MatDialog){
 

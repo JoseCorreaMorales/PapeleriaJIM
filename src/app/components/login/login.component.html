@@ -9,20 +9,20 @@
       <!-- username -->
       <mat-form-field class="ancho" appearance="fill">
         <mat-label>Usuario</mat-label>        
-        <input matInput formControlName="usuario">
+        <input matInput formControlName="usuario" [(ngModel)]="username">
         <mat-icon matSuffix>person</mat-icon>          
       </mat-form-field>
 
         <!-- password -->
       <mat-form-field class="ancho" appearance="fill">
         <mat-label>Contraseña</mat-label>
-        <input matInput type="password" formControlName="password">
+        <input matInput type="password" formControlName="password" [(ngModel)]="password">
         <mat-icon matSuffix>password</mat-icon>
       </mat-form-field>
       <br>
 
 
-      <button type="submit" class="ancho" mat-raised-button mat-button color="primary"
+      <button type="submit" class="ancho" mat-raised-button mat-button color="primary" 
         [disabled]="formLogin.invalid">Ingresar</button>
       <!-- (click)="ingresar()" -->
     </div>

@@ -28,6 +28,8 @@ export class TableComponent implements OnInit {
   verticalPosition : MatSnackBarVerticalPosition = 'top';
   horizontalPosition : MatSnackBarHorizontalPosition = 'center';
 
+  user = { id: 0, username: '', role: '' };
+
   constructor(public dialog: MatDialog, 
     private snackBar : MatSnackBar,
       //private dialogRef : MatDialogRef<DialogComponent>, -------------BAD IDEA
@@ -35,6 +37,9 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
+    this.api.userObs$.subscribe(user => {this.user = user;});
+   
+
   }
 
 
@@ -95,14 +100,16 @@ export class TableComponent implements OnInit {
   getAll(){   
     this.api.getItem().subscribe({
       next:(res) =>{
-        console.log(res);
+      //console.log("response getAll "+ res)
+       // console.log(res);
+        //console.log(res.data); /* if we use pagination PHP returns a data[] */
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         
       },
       error:(err)=>{
-        console.log("error")
+        console.log(err)
       }
     })
 

@@ -4,7 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent,  pathMatch: 'full'},
+ // { path: '', component: LoginComponent,  pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'table', component: TableComponent},
   { path: '**', component: LoginComponent},

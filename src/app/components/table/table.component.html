@@ -1,9 +1,10 @@
+
 <div class="container">
     <button mat-raised-button class="add-button" color="accent" (click)="openDialog()">
         <mat-icon>add</mat-icon>
         Agregar
     </button>    
-    <div class="">
+    <div class="" id="">
         <mat-form-field appearance="outline" class="search-bar">
             <mat-label>Filtrar</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ej. gomas" #input>
@@ -12,7 +13,7 @@
 
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource" matSort>
-
+ 
                 <!-- name Column -->
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
@@ -78,5 +79,11 @@
         </div>
 
     </div>
+</div>
+
+<div class="space">😊<br><br>¡Hey!<hr></div>
+
+<div class="footer">
+    <p>®Papelería JIM</p>
 </div>
 

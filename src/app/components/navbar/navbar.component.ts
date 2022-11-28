@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 
 
@@ -10,12 +11,19 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  
+  user = { id: 0, username: '', role: '' };
 
-  constructor() { }
+  constructor(private api : ApiService) { }
 
   ngOnInit(): void {
-    
+    this.user = this.api.getUser();
+    this.api.getUser();
+    this.api.userObs$.subscribe(
+      user => {
+        this.user = user;
+      }
+
+    );
   }
 
   
