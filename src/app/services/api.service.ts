@@ -4,7 +4,6 @@ import { BehaviorSubject } from 'rxjs';
 
 
 const JSON_SERVER = 'http://localhost:3000/productList/';
-//const URL_GET = 'http://localhost/jim-rest/public/products'; /* only works for get request */
 
 const URL = 'http://localhost/jim-rest/public/products/';
 
@@ -39,13 +38,13 @@ export class ApiService {
     this.userObs.next(this.user);
   }
 
- 
+
   getUser() {
     this.user.id = parseInt(localStorage.getItem('id') || '0');
     this.user.username = (localStorage.getItem('username') || '');
     this.user.role = (localStorage.getItem('role') || '');
 
-    return this.user;/* .username */
+    return this.user;
   }
 
   login(user: string, pass: string) {
@@ -64,44 +63,53 @@ export class ApiService {
     datos.append("price", data.price)
     datos.append("commentary", data.commentary)
     console.log("data en la api " + data)
-    const token = localStorage.getItem('token') || '';
-    return this.http.post<any>('http://localhost/jim-rest/public/products', datos, 
-    //{ headers: { Authorization: token } }
-    );/* productList */
+    return this.http.post<any>('http://localhost/jim-rest/public/products', datos
+    );
 
   }
 
   getItem() {
-    const token = localStorage.getItem('token') || '';
-    console.log({ headers: { Authorization: token } })
-    return this.http.get<any>('http://localhost/jim-rest/public/products', 
-    //{ headers: { Authorization: token } }
+    return this.http.get<any>('http://localhost/jim-rest/public/products',
     );
   }
 
   putItem(data: any, id: number) {
+    let datos = new FormData()
+    datos.append("name", "JOSE5")
+    datos.append("category", "1st")
+    datos.append("date", "Date")
+    datos.append("size", "chico")
+    datos.append("price", "111")
+    datos.append("commentary", "aaa")
+
+    datos.forEach(datos => {
+      console.log(datos)
+    });
+
+    return this.http.put<any>('http://localhost/jim-rest/public/products/' + id, datos
+      /* data [data.name,
+      data.category,
+      data.date,
+      data.size,
+      data.price,
+      data.commentary
+      ] */
+    );
+
+
+  }
+
+  deleteItem(id: any) {
     const token = localStorage.getItem('token') || '';
-    //return this.http.put<any>(URL+id, data);
-    return this.http.put<any>(data, 'http://localhost/jim-rest/public/products/' + id, 
-     { headers: { Authorization: token } }
-     );
-
-
+    return this.http.delete<any>('http://localhost/jim-rest/public/products/' + id,
+      { headers: { Authorizacion: token } }
+    );
   }
-
-  deleteItem(id: number) {
-    const token = localStorage.getItem('token') || '';
-    return this.http.delete<any>(URL + id, 
-      {headers: {Authorizacion: token}}
-      );
-  }
-
-
-
-
-  /* loginUsuario(login: any) {
-    return this.http.post('${this.URL}Login.php', JSON.stringify(login));
-  }
- */
 }
 
+
+/* {
+      params: {
+         id
+      }
+    } */

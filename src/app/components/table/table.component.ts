@@ -37,11 +37,9 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
-    this.api.userObs$.subscribe(user => {this.user = user;});
-   
-
+   this.api.userObs$.subscribe(user => {this.user = user;});
   }
-
+  
 
   
   /* openDialog() {
@@ -129,13 +127,14 @@ edit(row : any){
 }
 
 delete(id : number){
+ // console.log(id)
   this.api.deleteItem(id).subscribe({
     next:(res)=>{
-      //alert("Eliminado!!")
+      this.openNotification("Elimanado correctamente",  "Cerrar")
       this.getAll();
     },
     error:(err)=>{
-      //alert("Error...")
+      this.openNotification("Algo salio mal ",  "Cerrar")
     }
   })
 }

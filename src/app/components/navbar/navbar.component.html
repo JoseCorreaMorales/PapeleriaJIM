@@ -2,11 +2,11 @@
     <mat-toolbar color="warn">
      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <!-- <mat-icon>menu</mat-icon> -->
-     <mat-icon class="logo">straighten</mat-icon>
+     <mat-icon class="logo" >straighten</mat-icon>
     </button>
-    <span>Papelería JIM</span>
+    <span>Papelería JIM - {{user.username}}</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button (click)="salir()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>logout</mat-icon>
     </button>
    <!--  <button mat-raised-button color="accent" (click)="openDialog()">Agregar</button> -->

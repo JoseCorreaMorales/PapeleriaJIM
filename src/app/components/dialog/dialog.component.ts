@@ -22,7 +22,7 @@ export class DialogComponent implements OnInit {
 
   addForm !: FormGroup;
   tmpData: any;
-  user = { id: 0, username: '', role: '' };
+  user = { id: 0, username: '', role: ''};
 
   constructor(private formBuilder: FormBuilder, private api: ApiService,
     private notify: MatSnackBar, private dialogRef : MatDialogRef<DialogComponent>,
@@ -30,6 +30,7 @@ export class DialogComponent implements OnInit {
      ) { }
 
   ngOnInit(): void {
+    
     this.api.userObs$.subscribe(user => {this.user = user;});
     let tmpData = {};
     /* formulario reactivo */
@@ -41,7 +42,7 @@ export class DialogComponent implements OnInit {
       price: ['', Validators.required],
       commentary: ['', Validators.required],      
     })
-    //console.log(this.editData) //debugging
+    //console.log(this.editData) 
     if (this.editData) {
       this.actionBtn = "Actualizar";
       this.addForm.controls['name'].setValue(this.editData.name);
@@ -62,17 +63,14 @@ export class DialogComponent implements OnInit {
     if (!this.editData) {
       if(this.addForm.valid){
         //this.tmpData =JSON.parse(JSON.stringify(this.addForm.value))
-       
        // jQuery.param(this.tmpData)
         //console.log("Parametros url "+jQuery.param(this.tmpData))
         //console.log(JSON.parse(JSON.stringify(this.addForm.value)))
         //this.api.postItem(this.addForm.value).subscribe({
-
           //this.api.postItem(JSON.parse(JSON.stringify(this.addForm.value))).subscribe({
-          console.log(this.addForm.value)  
+          //console.log(this.addForm.value)  
           //this.api.postItem(jQuery.param(this.tmpData)).subscribe({
           this.api.postItem(this.addForm.value).subscribe({
-            
           next:(res)=>{         
             //alert("Producto añadido")  
            this.openNotification('Producto añadido', 'Cerrar')  
@@ -80,7 +78,7 @@ export class DialogComponent implements OnInit {
            this.dialogRef.close('guardar');
           },
           error:()=>{
-            this.openNotification('Producto añadido 1', 'Cerrar')       
+            this.openNotification('Producto añadido correctamente', 'Cerrar')       
           }
         })
       }
