@@ -22,7 +22,7 @@ export class DialogComponent implements OnInit {
 
   addForm !: FormGroup;
   tmpData: any;
-  user = { id: 0, username: '', role: ''};
+  //user = { id: 0, username: '', role: ''};
 
   constructor(private formBuilder: FormBuilder, private api: ApiService,
     private notify: MatSnackBar, private dialogRef : MatDialogRef<DialogComponent>,
@@ -31,7 +31,7 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.api.userObs$.subscribe(user => {this.user = user;});
+   // this.api.userObs$.subscribe(user => {this.user = user;});
     let tmpData = {};
     /* formulario reactivo */
     this.addForm = this.formBuilder.group({

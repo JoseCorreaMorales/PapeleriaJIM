@@ -1,16 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
 
 import { MatDialogRef } from '@angular/material/dialog';
 
-import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-table',
@@ -25,23 +25,23 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   dutarionInSeconds = 5;
-  verticalPosition : MatSnackBarVerticalPosition = 'top';
-  horizontalPosition : MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
 
-  user = { id: 0, username: '', role: '' };
+  //user = { id: 0, username: '', role: '' };
 
-  constructor(public dialog: MatDialog, 
-    private snackBar : MatSnackBar,
-      //private dialogRef : MatDialogRef<DialogComponent>, -------------BAD IDEA
-     private api: ApiService, private router : Router) { }
+  constructor(public dialog: MatDialog,
+    private snackBar: MatSnackBar,
+    //private dialogRef : MatDialogRef<DialogComponent>, -------------BAD IDEA
+    private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAll();
-   this.api.userObs$.subscribe(user => {this.user = user;});
+    //this.api.userObs$.subscribe(user => { this.user = user; });
   }
-  
 
-  
+
+
   /* openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
     this.dialog.open(DialogComponent, {
@@ -62,26 +62,26 @@ export class TableComponent implements OnInit {
   } */
 
 
- /*  openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '30%'
-    });
+  /*  openDialog() {
+     const dialogRef = this.dialog.open(DialogComponent, {
+       width: '30%'
+     });
+ 
+     dialogRef.afterClosed().subscribe(result =>{
+       console.log(result);
+       if (result === 'guardar') {
+         this.getAll();
+       }
+     })
+   } */
 
-    dialogRef.afterClosed().subscribe(result =>{
-      console.log(result);
-      if (result === 'guardar') {
-        this.getAll();
-      }
-    })
-  } */
-
-  openDialog(){
+  openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%'
-    }).afterClosed().subscribe( result =>{
-      if(result === 'guardar'){
+    }).afterClosed().subscribe(result => {
+      if (result === 'guardar') {
         this.getAll();
-        console.log('respuesta '+result)
+        console.log('respuesta ' + result)
       }
     })
   }
@@ -95,72 +95,85 @@ export class TableComponent implements OnInit {
     }
   }
 
-  getAll(){   
+  getAll() {
     this.api.getItem().subscribe({
-      next:(res) =>{
-      //console.log("response getAll "+ res)
-       // console.log(res);
+      next: (res) => {
+        //console.log("response getAll "+ res)
+        // console.log(res);
         //console.log(res.data); /* if we use pagination PHP returns a data[] */
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        
+
       },
-      error:(err)=>{
+      error: (err) => {
         console.log(err)
       }
     })
 
-}
+  }
 
-edit(row : any){
-  this.dialog.open(DialogComponent, {
-    width: '30%',
-    data: row
-  }).afterClosed().subscribe( result => {
+  edit(row: any) {
+    this.dialog.open(DialogComponent, {
+      width: '30%',
+      data: row
+    }).afterClosed().subscribe(result => {
       if (result === 'actualizar') {
         this.getAll();
         console.log('respuesta ' + result)
       }
-  })
+    })
 
-}
+  }
 
-delete(id : number){
- // console.log(id)
-  this.api.deleteItem(id).subscribe({
-    next:(res)=>{
-      this.openNotification("Elimanado correctamente",  "Cerrar")
-      this.getAll();
-    },
-    error:(err)=>{
-      this.openNotification("Algo salio mal ",  "Cerrar")
-    }
-  })
-}
+  delete(id: number) {
+    // console.log(id)
+    this.api.deleteItem(id).subscribe({
+      next:(res)=>{
+        this.openNotification("Elimanado correctamente",  "Cerrar")
+        this.getAll();
+      },
+      error:(err)=>{
+        this.openNotification("Algo salio mal ",  "Cerrar")
+      }
+    })
+
+    /* this.api.deleteItem(id)
+      .then((resp) => {
+        resp.json()
+      })
+      .then((datos) => {
+        this.openNotification("Elimanado correctamente", "Cerrar")
+        this.getAll();
+      })
+      .catch((error) => {
+        this.openNotification("Algo salio mal ", "Cerrar")
+      }) */
+
+  }
 
 
 
-openNotification(message:string, action:string) {
-  this.snackBar.open(message, action,  {
-    horizontalPosition: this.horizontalPosition,
-    verticalPosition: this.verticalPosition,
-    duration: this.dutarionInSeconds * 1000
-  });
+  openNotification(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: this.dutarionInSeconds * 1000
+    });
   };
 
-/* edit(row : any){
- const dialogRef =  this.dialog.open(DialogComponent, {
-    width: '30%',
-    data: row
-  });
-
-  dialogRef.afterClosed().subscribe(result =>{
-    console.log(result);
-    if (result === 'actualizar') {
-      this.getAll();
-    }
-  })
-
-} */
+  /* edit(row : any){
+   const dialogRef =  this.dialog.open(DialogComponent, {
+      width: '30%',
+      data: row
+    });
+  
+    dialogRef.afterClosed().subscribe(result =>{
+      console.log(result);
+      if (result === 'actualizar') {
+        this.getAll();
+      }
+    })
+  
+  } */
 }

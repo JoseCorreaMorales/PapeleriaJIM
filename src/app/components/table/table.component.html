@@ -1,6 +1,7 @@
 
 <div id="container">
-    <button *ngIf="user.role == 'admin' || user.role == 'user'" mat-raised-button class="add-button" color="accent" (click)="openDialog()">
+    <button  mat-raised-button class="add-button" color="accent" (click)="openDialog()">
+        <!-- *ngIf="user.role == 'admin' || user.role == 'user'" -->
         <mat-icon>add</mat-icon>
         Agregar
     </button>    
@@ -57,10 +58,10 @@
                 <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Acción </th>
                     <td mat-cell *matCellDef="let row"> 
-                        <button *ngIf="user.role == 'admin'" mat-icon-button color="primary"  (click)="edit(row)" ><!-- -->
+                        <button  mat-icon-button color="primary"  (click)="edit(row)" ><!--  *ngIf="user.role == 'admin'"-->
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button *ngIf="user.role == 'admin'" mat-icon-button color="warn" (click)="delete(row.id)">
+                        <button  mat-icon-button color="warn" (click)="delete(row.id)"><!-- *ngIf="user.role == 'admin'" -->
                             <mat-icon>delete</mat-icon>
                         </button>
                     </td>

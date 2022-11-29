@@ -9,22 +9,22 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class NavbarComponent implements OnInit {
 
-  user = { id: 0, username: '', role: '' };
+ // user = { id: 0, username: '', role: '' };
 
   constructor(private api : ApiService, private router : Router) { }
 
   ngOnInit(): void {
-    this.user = this.api.getUser();
+    /* this.user = this.api.getUser();
     this.api.getUser();
     this.api.userObs$.subscribe(
       user => {
         this.user = user;
       }
-    );
+    ); */
   }
 
   salir() {
-    this.api.setUser({ id: 0, username: '', role: '' });
+    //this.api.setUser({ id: 0, username: '', role: '' });
     this.router.navigate(["/login"])
   }
 }

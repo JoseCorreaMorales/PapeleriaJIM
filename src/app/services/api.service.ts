@@ -75,18 +75,18 @@ export class ApiService {
 
   putItem(data: any, id: number) {
     let datos = new FormData()
-    datos.append("name", "JOSE5")
-    datos.append("category", "1st")
-    datos.append("date", "Date")
-    datos.append("size", "chico")
-    datos.append("price", "111")
-    datos.append("commentary", "aaa")
+    datos.append("name", data.name)
+    datos.append("category", data.category)
+    datos.append("date", data.date)
+    datos.append("size", data.size)
+    datos.append("price", data.price)
+    datos.append("commentary", data.commentary)
 
     datos.forEach(datos => {
       console.log(datos)
     });
 
-    return this.http.put<any>('http://localhost/jim-rest/public/products/' + id, datos
+    return this.http.put<any>('http://localhost/jim-rest/public/products/' + id, data
       /* data [data.name,
       data.category,
       data.date,
@@ -100,10 +100,11 @@ export class ApiService {
   }
 
   deleteItem(id: any) {
-    const token = localStorage.getItem('token') || '';
-    return this.http.delete<any>('http://localhost/jim-rest/public/products/' + id,
-      { headers: { Authorizacion: token } }
+    //const token = localStorage.getItem('token') || '';
+    return this.http.delete<any>('http://localhostjose/jim-rest/public/products/' + id,
+      // { headers: { Authorizacion: token } }
     );
+    //return fetch('http://localhostjose/jim-rest/public/products/' + id, {method: 'DELETE', })
   }
 }
 
@@ -111,5 +112,5 @@ export class ApiService {
 /* {
       params: {
          id
-      }
+      }body:data
     } */
