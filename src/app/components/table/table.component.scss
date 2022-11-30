@@ -64,3 +64,17 @@ hr{
 mat-paginator{
   width: 100%;
 }
+
+.authors{
+  text-decoration: none;
+  color: #541690;
+}
+
+.authors:hover{
+  text-decoration: underline;
+  color: #FF4949;
+}
+
+a mat-icon{
+  font-size: 1.5rem;
+}

@@ -22,16 +22,17 @@ export class DialogComponent implements OnInit {
 
   addForm !: FormGroup;
   tmpData: any;
-  //user = { id: 0, username: '', role: ''};
+  user = { id: 0, username: '', role: ''};
 
   constructor(private formBuilder: FormBuilder, private api: ApiService,
     private notify: MatSnackBar, private dialogRef : MatDialogRef<DialogComponent>,
-     @Inject(MAT_DIALOG_DATA) public editData : any
+     @Inject(MAT_DIALOG_DATA) public editData : any, 
+     
      ) { }
 
   ngOnInit(): void {
     
-   // this.api.userObs$.subscribe(user => {this.user = user;});
+   this.api.userObs$.subscribe(user => {this.user = user;});
     let tmpData = {};
     /* formulario reactivo */
     this.addForm = this.formBuilder.group({
@@ -76,6 +77,7 @@ export class DialogComponent implements OnInit {
            this.openNotification('Producto añadido', 'Cerrar')  
            this.addForm.reset();
            this.dialogRef.close('guardar');
+           
           },
           error:()=>{
             this.openNotification('Producto añadido correctamente', 'Cerrar')       
@@ -93,6 +95,7 @@ export class DialogComponent implements OnInit {
         this.openNotification('actualizado correctamente yeyy', 'cerrar')
         this.addForm.reset();
         this.dialogRef.close('actualizar');
+        
       },
       error:(err) =>{
         this.openNotification('Opps algo salio mal..', 'cerrar')

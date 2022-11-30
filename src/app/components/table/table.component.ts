@@ -28,7 +28,7 @@ export class TableComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
 
-  //user = { id: 0, username: '', role: '' };
+  user = { id: 0, username: '', role: '' };
 
   constructor(public dialog: MatDialog,
     private snackBar: MatSnackBar,
@@ -37,7 +37,8 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
-    //this.api.userObs$.subscribe(user => { this.user = user; });
+    this.api.userObs$.subscribe(user => { this.user = user; });
+    this.api.getUser()
   }
 
 

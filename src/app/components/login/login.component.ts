@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
   username: string = "";
   password: string = "";
-  //user = { id: 0, username: '', role: '' };
+  user = { id: 0, username: '', role: '' };
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // this.api.setUser({ id: 0, username: '', role: '' });
+    this.api.setUser({ id: 0, username: '', role: '' });
   }
 
 
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
             
     }, 
     error => {
-      this.notify.open("Error, el usuario" +this.username+" es incorrecto", "Cerrar")
+      this.notify.open("Error, el usuario " +this.username+" es incorrecto", "Cerrar")
     }
 
     );
