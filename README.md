@@ -15,13 +15,13 @@ This  project,, is a web application designed to simplify product management and
 
 <h3 style="text-align:center;">Login</h3>
 <p align="center">
-<img src="./src/assets/login.png" alt=" login Design" width="90%"/>
+<img src="./src/assets/login.png" alt=" login Design" />
 
 </p>
 
 <h3 style="text-align:center;">Table of products</h3>
 <p align="center">
-<img src="./src/assets/reactive forms.png" alt=" login Design" width="90%"/>
+<img src="./src/assets/reactive forms.png" alt=" login Design" />
 
 </p>
 
