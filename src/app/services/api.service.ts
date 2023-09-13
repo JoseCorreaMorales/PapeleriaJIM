@@ -7,6 +7,8 @@ const JSON_SERVER = 'http://localhost:3000/productList/';
 
 const URL = 'http://localhost/jim-rest/public/products/';
 
+const PRODUCTION_URL = 'https://jim-rest-production.up.railway.app';
+
 interface User {
   id: number,
   username: string,
@@ -48,10 +50,10 @@ export class ApiService {
   }
 
   login(user: string, pass: string) {
-    return this.http.get<Login>('http://localhost/jim-rest/public/login', { params: { username: user, password: pass } });
+    return this.http.get<Login>('https://jim-rest-production.up.railway.app/login', { params: { username: user, password: pass } });
   }
 
-
+                              //https://jim-rest-production.up.railway.app + /login
 
 
   postItem(data: any) {
@@ -63,13 +65,13 @@ export class ApiService {
     datos.append("price", data.price)
     datos.append("commentary", data.commentary)
     console.log("data en la api " + data)
-    return this.http.post<any>('http://localhost/jim-rest/public/products', datos
+    return this.http.post<any>(PRODUCTION_URL+'/products', datos
     );
 
   }
 
   getItem() {
-    return this.http.get<any>('http://localhost/jim-rest/public/products',
+    return this.http.get<any>(PRODUCTION_URL+'/products',
     );
   }
 
@@ -86,7 +88,7 @@ export class ApiService {
       console.log(datos)
     });
 
-    return this.http.put<any>('http://localhost/jim-rest/public/products/' + id, data
+    return this.http.put<any>(PRODUCTION_URL+'/products/' + id, data
       /* data [data.name,
       data.category,
       data.date,
@@ -101,7 +103,7 @@ export class ApiService {
 
   deleteItem(id: any) {
     //const token = localStorage.getItem('token') || '';
-    return this.http.delete<any>('http://localhostjose/jim-rest/public/products/' + id,
+    return this.http.delete<any>(PRODUCTION_URL+'/products/' + id,
       // { headers: { Authorizacion: token } }
     );
     //return fetch('http://localhostjose/jim-rest/public/products/' + id, {method: 'DELETE', })

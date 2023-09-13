@@ -4,7 +4,7 @@
         <!-- *ngIf="user.role == 'admin' || user.role == 'user'" -->
         <mat-icon>add</mat-icon>
         Agregar
-    </button>    
+    </button>
     <div class="" id="">
         <mat-form-field appearance="outline" class="search-bar">
             <mat-label>Filtrar</mat-label>
@@ -14,7 +14,7 @@
 
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource" matSort>
- 
+
                 <!-- name Column -->
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
@@ -57,7 +57,7 @@
                 <!-- delete or update column -->
                 <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Acción </th>
-                    <td mat-cell *matCellDef="let row"> 
+                    <td mat-cell *matCellDef="let row">
                         <button *ngIf="user.role == 'admin'"  mat-icon-button color="primary"  (click)="edit(row)" ><!--  *ngIf="user.role == 'admin'"-->
                             <mat-icon>edit</mat-icon>
                         </button>
@@ -82,11 +82,14 @@
     </div>
 </div>
 
-<div class="space">📌 📍📎 🖇 📏 📐 ✂🗃️
+<div class="space">
     <br><br><br>
-    <a href="https://github.com/JoseCorreaMorales" target="_blank" class="authors"><mat-icon> code_blocks</mat-icon> Ver Autores♡ </a>
+    <a href="https://github.com/JoseCorreaMorales" target="_blank" class="authors"><mat-icon> code_blocks</mat-icon> Ver Autor &hearts; </a>
+    📌 📏 📐 ✂
     <br><br><br>
-    <hr></div>
+    <hr>
+
+  </div>
 
 <div class="footer">
     <p>®Papelería JIM</p>

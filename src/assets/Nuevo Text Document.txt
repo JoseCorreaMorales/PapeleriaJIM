@@ -1,0 +1,288 @@
+git merge --allow-unrelated-histories <branch-to-merge>
+
+npm i -D  nodemon
+dHR2aCxr2F
+
+"main": "index.html",
+martin
+npm init
+npm i express
+npm install
+
+node app.js
+
+
+for /r . %%i in (*.*) do type "%%i" >> contenido_total.txt
+
+
+https://www3.animeflv.net/ver/zetsuen-no-tempest-1
+
+https://www3.animeflv.net/anime/kage-no-jitsuryokusha-ni-naritakute
+npm init
+https://parceljs.org/
+
+npm i --save-dev parcel-bundler
+parcel index.html //run app in a develop server
+npm install -g  parcel-bundler
+
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+change to 
+
+ "scripts": {
+    "dev": "parcel src/index.html --open"
+  },
+
+and instead of 
+parcel index.html
+we can do nmp run dev
+
+to get the dist folder
+ "scripts": {
+    "dev": "parcel src/index.html --open"
+    "build": "parcel src/index.html --open"
+  },
+
+
+npm install gsap /*animaion libary */
+
+
+¡Hola! Soy Luis Felipe Fernandez Betancur, un apasionado de la programación con 18 años de edad. Desde que tenía 16 años, he estado estudiando constantemente porque me encanta aprender y estar actualizado con las últimas tendencias en tecnología. Aunque mis padres no tienen los recursos financieros para pagarme la carrera de ingeniería de software, esto no ha sido un impedimento para seguir mi pasión por la programación. Me considero una persona muy inteligente y siempre me esfuerzo al máximo para lograr mis objetivos. En la escuela, siempre fui uno de los mejores estudiantes y estoy seguro de que podré aplicar todo lo que he aprendido para construir soluciones innovadoras. Estoy emocionado de compartir mis habilidades y conocimientos en programación en mi portafolio web y estoy seguro de que seré un valioso activo para cualquier equipo que necesite un programador entusiasta y comprometido. ¡Gracias por visitar mi sitio web
+
+
+
+
+
+57d284463bb7ceac1d7517171bf3e395c8c7bcb1
+
+horizon bold
+Horizon theme
+chocola theme
+spirited away - asuna bg
+
+38
+66
+2c
+76
+2e
+c2
+The Eminence in Shadow 
+
+Pixel 3a api 33
+
+%appdata%
+
+driver ch340
+https://sparks.gogo.co.nz/ch340.html
+https://sparks.gogo.co.nz/ch340.html
+esp32 pinout 30 pin
+
+
+query 1
+personas.
+
+swagger/index.html
+
+
+git push origin master
+
+9bGizScMm4
+
+Literata font
+
+en base a las etapas de proceso de pruebas asignar los roles y que actividad realizarian
+
+dotnet new webapi -minimal -o TodoApi
+\Users\josec\SmarthomeRest\SmarthomeRest.csproj...
+TodoApi nombre
+
+echo "# Klasster-group-web-page" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/JoseCorreaMorales/Klasster-group-web-page.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/JoseCorreaMorales/Klasster-group-web-page.git
+git branch -M main
+git push -u origin main
+
+
+
+
+ASP .NET CoreWeb API	
+
+\${Identificador} { return token(yytext(), "IDENTIFICADOR", yyline, yycolumn); }
+Joseeeeuwu
+https://github.com/JoseCorreaMorales/lenguajes-de-interfaz
+Panchiinko
+5 6 7 8
+XG3WEWkW1w
+https://team-cartwright.com/rising-water-experiment/
+git remote add origin URL
+git remote
+git remote -v
+git push origin master
+
+git pull origin master
+
+git pull origin master allow-unrelated-histories
+
+git push origin master
+
+C:\Windows\System32\drivers\etc
+
+Parametros url name=asda&category=Second%20option&date=2022-11-16T06%3A00%3A00.000Z&size=Chico&price=222&commentary=adsasd
+http://localhost/jim-rest/public/products
+
+http://localhost/jim-rest/public/products?name=asda&category=Second%20option&date=2022-11-16T06%3A00%3A00.000Z&size=Chico&price=222&commentary=adsasd
+
+s19030190@itsch.edu.mx
+Hr1&1b_L
+
+ final Image getIcon(){
+    // Image value = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("src\\res\\logoImage.png"));
+     //return value;
+    Image icon = new ImageIcon(getClass().getResource("src\\res\\logoImage.png")).getImage();
+        return icon;
+        
+     }
+
+    /*UI
+    void renderHeader(){
+        jtlTokens.getColumn("Lexema")
+                .setHeaderRenderer((JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
+                        -> new JLabel(new ImageIcon(getClass().getResource("/src/res/script.png"))) // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates
+        ); 
+    }*/
+
+     Image icon = new ImageIcon(getClass().getResource("src\\res\\logoImage.png")).getImage();
+        
+       //getIcon();
+
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\KMSpico
+
+
+
+
+
+https://medium.com/@camilosotomontoya/usar-angular-4-y-jquery-juntos-e734d5ecc1c3
+https://developers.google.com/speed/libraries
+https://www.freecodecamp.org/espanol/news/solicitud-http-en-javascript/
+
+https://www.javatpoint.com/jquery-param-method
+https://www.google.com/search?q=objecto+a+cadena+de+paramentros+typescript&rlz=1C1CHBF_esMX1032MX1032&oq=objecto+a+cadena+de+paramentros+typescript&aqs=chrome..69i57.13349j0j7&sourceid=chrome&ie=UTF-8
+https://es.stackoverflow.com/questions/132352/como-convertir-un-objeto-en-una-cadena-de-par%C3%A1metros-codificada-para-url
+https://www.techiedelight.com/es/print-contents-object-javascript/
+
+
+https://www.tutorialesprogramacionya.com/angularya/detalleconcepto.php?punto=28&codigo=28&inicio=20
+
+https://github.com/parzibyte/crud-angular-php-mysql
+https://parzibyte.me/blog/2019/11/25/angular-php-mysql-crud/
+
+https://www.youtube.com/watch?v=08t6bwCaG5E
+https://adrian-sebuliba1.medium.com/angular-application-lumen-api-bab1c1613501
+https://adrian-sebuliba1.medium.com/angular-application-lumen-api-part-2-287a883155c0
+
+https://github.com/Sebuliba-Adrian/shoppers
+https://github.com/Sebuliba-Adrian/shoppers/tree/develop     --
+https://github.com/Sebuliba-Adrian/shoppers-server
+
+
+https://asfo.medium.com/c%C3%B3mo-utilizar-jwt-en-angular-de-forma-f%C3%A1cil-cc0f75e2e9c
+
+
+CORS
+https://itelisoft.com/cors-en-laravel/
+https://www.youtube.com/watch?v=ERD-BsBFek8
+https://www.codementor.io/@chiemelachinedum/steps-to-enable-cors-on-a-lumen-api-backend-e5a0s1ecx
+https://medium.com/@rey933/habilitar-cors-en-lumen-8b95ffd0edba
+
+
+
+CORS PHP LUMEN
+https://gist.github.com/danharper/06d2386f0b826b669552
+https://www.codementor.io/@chiemelachinedum/steps-to-enable-cors-on-a-lumen-api-backend-e5a0s1ecx
+https://packagist.org/packages/vluzrmos/lumen-cors
+https://github.com/digiaonline/lumen-cors
+https://stackoverflow.com/questions/36448134/enable-cors-in-lumen
+
+
+
+https://www.nigmacode.com/laravel/solucionar-cors-en-laravel/
+
+
+
+
+
+composer create-project --prefer-dist laravel/lumen [project-name] 	//crear el proyecto
+
+php artisan make:migration create_users_table  //crear los esquemas
+
+php artisan migrate //solo la primera vez - crear las tablas
+
+php artisan migrate:fresh //borra y las vuele a crear - cuando realizamos un cambio en las migraciones
+
+php artisan make:seeder UserTableSeeder //llenar las tablas al azar  	nnop  --- crear el seeder
+
+php artisan db:seed //isnertar la semilla 
+
+php artisan make:seeder TablaTableSeeder //agreggar datos al azar
+
+composer update //install dependences
+
+
+//el modelo debe llamarse en singular, e inica en mayus
+php artisan make:model Topic
+
+
+
+
+
+migrate 
+
+
+gramatica.group("VALOR", "IDENTIFICADOR | OPERADOR_LOGICO | NUMERO | OPEDECOMPARACION");
+          gramatica.group("PARAMETROS", "VALOR(IDENTIFICADOR VALOR)?");
+
+          gramatica.group("MENSAJE", " SOUT PARENTESIS_A COMILLA TEXTO COMILLA PARENTESIS_C PUNTOYCOMA");
+
+           gramatica.group("FUNCION", "ESTRUCTURA_SI");
+           gramatica.group("FUNCION_COMP", "FUNCION PARENTESIS_A PARAMETROS PARENTESIS_C LLAVE_A MENSAJE  LLAVE_C");
+
+
+
+ pelicula(
+	% Id
+	 " ",
+         % Genero
+         " ",
+         % Nombre
+         " ",
+         % Actores
+         " ",
+         % Sinopsis
+         " ",
+         % Duracion   
+         " ", 
+         % Idioma
+         " ",
+         % Año
+         ,
+         % Enlace (donde puedo verla)
+         " ",
+          % imagen (url de la portada)
+         " "). crea la misma estructura 20 veces
+
+
+
+
+
+
+
+
+transductores y sensores mapa mental

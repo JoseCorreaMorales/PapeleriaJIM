@@ -15,7 +15,7 @@ export class DialogComponent implements OnInit {
   itemList = ['Chico', 'Mediano', 'Grande']
   actionBtn : String = "Guardar"
 
-  
+
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
@@ -26,12 +26,12 @@ export class DialogComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private api: ApiService,
     private notify: MatSnackBar, private dialogRef : MatDialogRef<DialogComponent>,
-     @Inject(MAT_DIALOG_DATA) public editData : any, 
-     
+     @Inject(MAT_DIALOG_DATA) public editData : any,
+
      ) { }
 
   ngOnInit(): void {
-    
+
    this.api.userObs$.subscribe(user => {this.user = user;});
     let tmpData = {};
     /* formulario reactivo */
@@ -41,9 +41,9 @@ export class DialogComponent implements OnInit {
       date: ['', Validators.required],
       size: ['', Validators.required],
       price: ['', Validators.required],
-      commentary: ['', Validators.required],      
+      commentary: ['', Validators.required],
     })
-    //console.log(this.editData) 
+    //console.log(this.editData)
     if (this.editData) {
       this.actionBtn = "Actualizar";
       this.addForm.controls['name'].setValue(this.editData.name);
@@ -57,8 +57,8 @@ export class DialogComponent implements OnInit {
   }
 
 
-  
- 
+
+
 
   addProduct(){
     if (!this.editData) {
@@ -69,18 +69,18 @@ export class DialogComponent implements OnInit {
         //console.log(JSON.parse(JSON.stringify(this.addForm.value)))
         //this.api.postItem(this.addForm.value).subscribe({
           //this.api.postItem(JSON.parse(JSON.stringify(this.addForm.value))).subscribe({
-          //console.log(this.addForm.value)  
+          //console.log(this.addForm.value)
           //this.api.postItem(jQuery.param(this.tmpData)).subscribe({
           this.api.postItem(this.addForm.value).subscribe({
-          next:(res)=>{         
-            //alert("Producto añadido")  
-           this.openNotification('Producto añadido', 'Cerrar')  
+          next:(res)=>{
+            //alert("Producto añadido")
+           this.openNotification('Producto añadido', 'Cerrar')
            this.addForm.reset();
            this.dialogRef.close('guardar');
-           
+
           },
           error:()=>{
-            this.openNotification('Producto añadido correctamente', 'Cerrar')       
+            this.openNotification('Producto añadido correctamente', 'Cerrar')
           }
         })
       }
@@ -95,7 +95,7 @@ export class DialogComponent implements OnInit {
         this.openNotification('actualizado correctamente yeyy', 'cerrar')
         this.addForm.reset();
         this.dialogRef.close('actualizar');
-        
+
       },
       error:(err) =>{
         this.openNotification('Opps algo salio mal..', 'cerrar')
@@ -112,7 +112,7 @@ export class DialogComponent implements OnInit {
       verticalPosition: this.verticalPosition,
       duration: this.durationInSeconds * 1000
     });
-    };  
+    };
 
 
 }
