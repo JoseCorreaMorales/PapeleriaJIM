@@ -1,5 +1,5 @@
 # Papeleria JIM
-This  project,, is a web application designed to simplify product management and CRUD (Create, Read, Update, Delete) operations efficiently and elegantly. PapeleriaJIM use a REST API hosted at [Railway](https://jim-rest-production.up.railway.app/) to interact with a database and provide a comprehensive set of tools for product administration.
+This  project,, is a web application designed to simplify product management and CRUD (Create, Read, Update, Delete) operations efficiently. PapeleriaJIM use a REST API hosted at [Railway](https://jim-rest-production.up.railway.app/) to interact with a database and provide a comprehensive set of tools for product administration.
 
 ## REST API REPOSITORY
 [Lumen Laravel REST API](https://github.com/JoseCorreaMorales/jim-rest)
